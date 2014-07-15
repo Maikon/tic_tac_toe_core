@@ -3,15 +3,16 @@ require 'spec_helper'
 
 describe TicTacToeCore::Board do
   let(:board) { TicTacToeCore::Board.new }
+  let(:grid_with_one_move) { ['X', 2, 3, 4, 5, 6, 7, 8, 9] }
 
   describe '#mark_position' do
     it 'marks a position on grid with an X' do
       board.mark_position(1, 'X')
-      expect(board.grid).to eq ['X', 2, 3, 4, 5, 6, 7, 8, 9]
+      expect(board.grid).to eq grid_with_one_move
     end
 
     it 'raises an error if the position is taken' do
-      board = TicTacToeCore::Board.new(['X', 2, 3, 4, 5, 6, 7, 8, 9])
+      board = TicTacToeCore::Board.new(grid_with_one_move)
       expect{ board.mark_position(1, 'O') }.to raise_error
     end
   end
@@ -40,8 +41,8 @@ describe TicTacToeCore::Board do
     it 'returns the available moves from the board' do
       board = TicTacToeCore::Board.new(['X', 'O', 3, 'X', 5, 6, 7, 'X', 9])
       expect(board.available_moves).to eq [3, 5, 6, 7, 9]
-      another_board = TicTacToeCore::Board.new([1, 2, 3, 'X', 5, 6, 7, 8, 9])
-      expect(another_board.available_moves).to eq [1, 2, 3, 5, 6, 7, 8, 9]
+      another_board = TicTacToeCore::Board.new(grid_with_one_move)
+      expect(another_board.available_moves).to eq [2, 3, 4, 5, 6, 7, 8, 9]
     end
   end
 
@@ -51,7 +52,7 @@ describe TicTacToeCore::Board do
     end
 
     it 'returns O if a move was made on the board' do
-      board = TicTacToeCore::Board.new([1, 'X', 3, 4, 5, 6, 7, 8, 9])
+      board = TicTacToeCore::Board.new(grid_with_one_move)
       expect(board.current_mark).to eq 'O'
     end
   end
@@ -70,7 +71,7 @@ describe TicTacToeCore::Board do
 
   describe '#last_mark' do
     it "returns X if it's O turn to make a move" do
-      board = TicTacToeCore::Board.new(['X', 2, 3, 4, 5, 6, 7, 8, 9])
+      board = TicTacToeCore::Board.new(grid_with_one_move)
       expect(board.last_move_mark).to eq 'X'
     end
 
@@ -82,7 +83,7 @@ describe TicTacToeCore::Board do
 
   describe '#reset_value' do
     it 'resets the value at the given cell' do
-      board = TicTacToeCore::Board.new(['X', 2, 3, 4, 5, 6, 7, 8, 9])
+      board = TicTacToeCore::Board.new(grid_with_one_move)
       board.reset_value(1)
       expect(board.grid).to eq [1, 2, 3, 4, 5, 6, 7, 8, 9]
     end
