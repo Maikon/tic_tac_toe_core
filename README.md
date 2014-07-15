@@ -1,6 +1,6 @@
 # TicTacToeCore
 
-TODO: Write a gem description
+This gem contains the core functionality for a basic Tic-Tac-Toe game. It can be used with an interface for games between two human players, human vs computer or computer vs computer. The computer player uses the Minimax algorithm to determine the best move possible thus making it unbeatable.
 
 ## Installation
 
