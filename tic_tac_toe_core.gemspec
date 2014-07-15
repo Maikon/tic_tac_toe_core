@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'TicTacToeCore/version'
+require 'tic_tac_toe_core/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "TicTacToeCore"
+  spec.name          = "tic_tac_toe_core"
   spec.version       = TicTacToeCore::VERSION
   spec.authors       = ["Makis Otman"]
   spec.email         = ["makisotman@gmail.com"]

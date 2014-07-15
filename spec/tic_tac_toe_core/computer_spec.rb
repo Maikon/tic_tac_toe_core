@@ -1,4 +1,4 @@
-require 'TicTacToeCore/computer'
+require 'tic_tac_toe_core/computer'
 
 describe TicTacToeCore::Computer do
   describe '#choose_mark' do

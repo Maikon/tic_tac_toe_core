@@ -1,6 +1,6 @@
-require 'TicTacToeCore/game'
-require 'TicTacToeCore/board'
-require 'TicTacToeCore/computer'
+require 'tic_tac_toe_core/game'
+require 'tic_tac_toe_core/board'
+require 'tic_tac_toe_core/computer'
 require 'spec_helper'
 
 describe TicTacToeCore::Game do
