@@ -69,8 +69,8 @@ module TicTacToeCore
      [] <<  rows.map.with_index { |row, index| row[index] } << rows.reverse.map.with_index { |row, index| row[index] }
    end
 
-   def default_grid(number)
-     (1..number * number).to_a
+   def default_grid(size)
+     (1..size * size).to_a
    end
  end
 end
