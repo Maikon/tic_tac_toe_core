@@ -4,12 +4,14 @@ require 'tic_tac_toe_core/computer'
 require 'spec_helper'
 
 describe TicTacToeCore::Game do
-  let(:board) { TicTacToeCore::Board.new }
-  let(:game)  { TicTacToeCore::Game.new(board) }
+  let(:board)        { TicTacToeCore::Board.new }
+  let(:game)         { TicTacToeCore::Game.new(board) }
+  let(:winning_grid) { ['X', 'X', 'X', 4, 5, 6, 7, 8, 9] }
+  let(:full_grid)    { ['X', 'X', 'O', 'O', 'X', 'X', 'X', 'O', 'O'] }
 
   describe '#has_winner?' do
     it 'returns true if there is a winner' do
-      board = TicTacToeCore::Board.new(['X', 'X', 'X', 4, 5, 6, 7, 8, 9])
+      board = TicTacToeCore::Board.new(winning_grid)
       game = TicTacToeCore::Game.new(board)
       expect(game.has_winner?).to eq true
     end
@@ -21,7 +23,7 @@ describe TicTacToeCore::Game do
 
   describe '#is_draw?' do
     it 'returns true if the game is a draw' do
-      board = TicTacToeCore::Board.new(['X', 'X', 'O', 'O', 'X', 'X', 'X', 'O', 'O'])
+      board = TicTacToeCore::Board.new(full_grid)
       game = TicTacToeCore::Game.new(board)
       expect(game.is_draw?).to eq true
     end
@@ -33,7 +35,7 @@ describe TicTacToeCore::Game do
 
   describe '#is_over?' do
     it 'returns true if the game has reached an end state' do
-      board = TicTacToeCore::Board.new(['X', 'X', 'X', 4, 5, 6, 7, 8, 9])
+      board = TicTacToeCore::Board.new(winning_grid)
       game = TicTacToeCore::Game.new(board)
       expect(game.is_over?).to eq true
     end
@@ -63,7 +65,7 @@ describe TicTacToeCore::Game do
 
   describe '#reset' do
     it 'resets the board' do
-      board = TicTacToeCore::Board.new(['X', 'X', 'O', 'O', 'X', 'X', 'X', 'O', 'O'])
+      board = TicTacToeCore::Board.new(full_grid)
       game = TicTacToeCore::Game.new(board)
       game.reset
       expect(board.grid).to eq [1, 2, 3, 4, 5, 6, 7, 8, 9]
