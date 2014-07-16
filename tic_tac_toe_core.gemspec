@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Makis Otman"]
   spec.email         = ["makisotman@gmail.com"]
   spec.summary       = %q{Core functionality of the TicTacToe Game which can be used with a variety of interfaces.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/Maikon/tic_tac_toe_core"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -19,5 +19,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
-  spec.add_development_dependency "simplecov"
 end
