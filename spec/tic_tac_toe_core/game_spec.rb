@@ -1,7 +1,4 @@
 require 'tic_tac_toe_core/game'
-require 'tic_tac_toe_core/board'
-require 'tic_tac_toe_core/computer'
-require 'spec_helper'
 
 describe TicTacToeCore::Game do
   let(:board)        { TicTacToeCore::Board.new }
