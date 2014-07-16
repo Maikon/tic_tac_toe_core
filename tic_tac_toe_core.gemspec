@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Makis Otman"]
   spec.email         = ["makisotman@gmail.com"]
   spec.summary       = %q{Core functionality of the TicTacToe Game which can be used with a variety of interfaces.}
+  spec.description   = %q{This gem contains the core functionality for a basic Tic-Tac-Toe game. It can be used with an interface for games between two human players, human vs computer or computer vs computer. The computer player uses the Minimax algorithm to determine the best move possible thus making it unbeatable.}
   spec.homepage      = "https://github.com/Maikon/tic_tac_toe_core"
   spec.license       = "MIT"
 
@@ -17,6 +18,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec", "~> 3.0"
 end
