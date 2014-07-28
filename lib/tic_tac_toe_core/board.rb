@@ -34,7 +34,7 @@ module TicTacToeCore
    end
 
    def game_over?
-     winner? || available_moves.empty?
+     winner? || draw?
    end
 
    def reset_value(value)
