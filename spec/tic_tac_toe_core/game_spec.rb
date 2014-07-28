@@ -45,18 +45,18 @@ describe TicTacToeCore::Game do
   describe '#play_next_move' do
     it 'marks the given position on the board' do
       game.play_next_move(1)
-      expect(board.grid).to eq ['X', 2, 3, 4, 5, 6, 7, 8, 9]
+      expect(board.grid).to eq [0, 'X', 2, 3, 4, 5, 6, 7, 8]
       game.play_next_move(5)
-      expect(board.grid).to eq ['X', 2, 3, 4, 'O', 6, 7, 8, 9]
+      expect(board.grid).to eq [0, 'X', 2, 3, 4, 'O', 6, 7, 8]
     end
   end
 
   describe '#computer_makes_move' do
     it 'computer makes a move on the board' do
-      board = TicTacToeCore::Board.new(['X', 'X', 3, 4, 'O', 6, 7, 8, 9])
+      board = TicTacToeCore::Board.new(['X', 'X', 2, 3, 'O', 5, 6, 7, 8])
       game = TicTacToeCore::Game.new(board)
       game.computer_makes_move
-      expect(board.grid).to eq ['X', 'X', 'O', 4, 'O', 6, 7, 8, 9]
+      expect(board.grid).to eq ['X', 'X', 'O', 3, 'O', 5, 6, 7, 8]
     end
   end
 
@@ -65,7 +65,7 @@ describe TicTacToeCore::Game do
       board = TicTacToeCore::Board.new(full_grid)
       game = TicTacToeCore::Game.new(board)
       game.reset
-      expect(board.grid).to eq [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      expect(board.grid).to eq [0, 1, 2, 3, 4, 5, 6, 7, 8]
     end
   end
 
@@ -83,7 +83,7 @@ describe TicTacToeCore::Game do
 
   describe '#last_move_mark' do
     it 'returns the mark of the last move made' do
-      board = TicTacToeCore::Board.new(['X', 2, 3, 4, 5, 6, 7, 8, 9])
+      board = TicTacToeCore::Board.new(['X', 1, 2, 3, 4, 5, 6, 7, 8])
       game = TicTacToeCore::Game.new(board)
       expect(game.last_move_mark).to eq 'X'
     end
