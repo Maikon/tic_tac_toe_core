@@ -9,8 +9,8 @@ module TicTacToeCore
    end
 
    def mark_position(position, mark)
-     raise 'Position already taken' if !grid.include?(position)
-     grid[position - 1] = mark
+     raise 'Position already taken' unless grid.include?(position)
+     grid[position] = mark
    end
 
    def draw?
@@ -38,7 +38,7 @@ module TicTacToeCore
    end
 
    def reset_value(value)
-     grid[value - 1] = value
+     grid[value] = value
    end
 
    def win_for(mark)
@@ -47,7 +47,7 @@ module TicTacToeCore
 
    def reset
      grid.each_with_index do |move, index|
-       grid[index] = index + 1
+       grid[index] = index
      end
    end
 
@@ -70,7 +70,8 @@ module TicTacToeCore
    end
 
    def default_grid(size)
-     (1..size * size).to_a
+     index = size * size - 1
+     (0..index).to_a
    end
  end
 end
